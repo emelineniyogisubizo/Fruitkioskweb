@@ -40,7 +40,7 @@ const heading = document.createElement('h1');
 heading.style.fontSize = '60px'
 heading.style.marginTop = '5cm'
 heading.textContent = 'Welcome to Green Kiosks';
-heading.style.color = 'green';
+heading.style.color = '#2E8B57';
 heading.style.marginLeft = '6cm';
 
 const paragraph = document.createElement('p');
@@ -59,7 +59,7 @@ button.style.height = '45px';
 button.style.borderRadius = '5px';
 button.style.border = 'none';
 button.style.marginTop = '1cm'
-button.style.backgroundColor = 'green';
+button.style.backgroundColor = '#2E8B57';
 button.style.color = 'white';
 button.style.marginLeft = '6cm';
 
@@ -99,7 +99,7 @@ newFruits.forEach(fruit => {
   const li = document.createElement('li');  
   li.textContent = fruit;                    
   li.style.fontSize = '20px'; 
-  li.style.marginLeft = '0.6cm'               
+  li.style.marginLeft = '0.6cm';           
   fruitList.appendChild(li);                  
 });
 
@@ -133,11 +133,90 @@ veggieItems.forEach(item => {
 
 const vegetableimage = document.createElement('img');
 vegetableimage.src = 'image/vegyremimg.png';
-// vegetableimage.style.marginLeft = '8cm';
+
 vegetableimage.style.marginTop = '1cm'
 
 imageveg.append(vegetableimage)
 
+const footer = document.createElement('footer');
+footer.style.backgroundColor = '#2E8B57'; 
+footer.style.color = 'white';
+footer.style.padding = '20px 40px';
+footer.style.marginTop = '3cm';
+footer.style.fontFamily = 'Arial, sans-serif';
+
+const footerTop = document.createElement('div');
+footerTop.style.display = 'flex';
+footerTop.style.justifyContent = 'space-between';
+footerTop.style.alignItems = 'center';
+footerTop.style.flexWrap = 'wrap'; 
+footerTop.style.maxWidth = '1200px';
+footerTop.style.margin = '0 auto 15px auto';
 
 
+const businessName = document.createElement('div');
+businessName.textContent = 'GreenKiosk';
+businessName.style.fontSize = '28px';
+businessName.style.fontWeight = '700';
+businessName.style.letterSpacing = '1.2px';
 
+
+const socialMedia = document.createElement('div');
+socialMedia.style.display = 'flex';
+socialMedia.style.gap = '20px'; 
+
+
+const socialPlatforms = [
+  { name: 'Facebook', class: 'fab fa-facebook-f', url: 'https://facebook.com' },
+  { name: 'Twitter', class: 'fab fa-twitter', url: 'https://twitter.com' },
+  { name: 'Instagram', class: 'fab fa-instagram', url: 'https://instagram.com' },
+  { name: 'LinkedIn', class: 'fab fa-linkedin-in', url: 'https://linkedin.com' }
+];
+
+
+socialPlatforms.forEach(platform => {
+  const a = document.createElement('a');
+  a.href = platform.url;
+  a.target = '_blank';
+  a.setAttribute('aria-label', platform.name);
+  a.style.color = 'white';
+  a.style.fontSize = '22px';
+  a.style.transition = 'color 0.3s ease';
+
+
+  a.addEventListener('mouseenter', () => {
+    a.style.color = '#a8e6cf'; 
+  });
+  a.addEventListener('mouseleave', () => {
+    a.style.color = 'white';
+  });
+
+  const icon = document.createElement('i');
+  icon.className = platform.class;
+
+  a.appendChild(icon);
+  socialMedia.appendChild(a);
+});
+
+
+footerTop.appendChild(businessName);
+footerTop.appendChild(socialMedia);
+
+
+footer.appendChild(footerTop);
+
+
+const copyright = document.createElement('div');
+const currentYear = new Date().getFullYear();
+copyright.textContent = `© ${currentYear} GreenKiosk. All rights reserved.`;
+copyright.style.fontSize = '14px';
+copyright.style.textAlign = 'center';
+copyright.style.opacity = '0.8';
+copyright.style.maxWidth = '1200px';
+copyright.style.margin = '0 auto';
+
+
+footer.appendChild(copyright);
+
+
+document.body.appendChild(footer);
