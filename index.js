@@ -14,6 +14,71 @@ const imageveg = document.getElementById('veggieimg');
 const orderdlist = document.getElementById('veg')
 
 
+
+const nav = document.createElement('div');
+nav.className = 'navcontainer';
+Object.assign(nav.style, {
+  display: 'flex',
+  alignItems: 'center',
+  justifyContent: 'space-between',
+  background: '#fdfde7',
+  border: '5px solid #bdbdbd',
+  padding: '12px 32px',
+  margin: '8px',
+  borderRadius: '20px',
+  boxSizing: 'border-box',
+});
+
+
+const logo = document.createElement('div');
+logo.textContent = 'GreenKiosk';
+Object.assign(logo.style, {
+  fontWeight: 'bold',
+  fontSize: '28px',
+  color: '#2E8B57',
+  marginRight: '16px',
+  fontFamily: 'sans-serif'
+});
+nav.appendChild(logo);
+
+
+const navLinks = document.createElement('nav');
+navLinks.style.display = 'flex';
+navLinks.style.gap = '36px';
+navLinks.style.flex = '1';
+navLinks.style.justifyContent = 'center';
+
+['Home', 'Products', 'About', 'Contact'].forEach(text => {
+  const link = document.createElement('a');
+  link.textContent = text;
+  link.href = '#';
+  Object.assign(link.style, {
+    color: '#2E8B57',
+    fontSize: '18px',
+    textDecoration: 'none',
+    fontFamily: 'sans-serif'
+  });
+  link.onmouseenter = () =>{
+     link.style.textDecoration = 'underline';
+     link.style.textDecorationColor = 'purple';
+  };
+
+  link.onmouseleave = () => link.style.textDecoration = 'none';
+  navLinks.appendChild(link);
+});
+nav.appendChild(navLinks);
+
+
+const cart = document.createElement('i');
+cart.className = 'fa fa-shopping-cart'; 
+cart.style.fontSize = '22px';
+cart.style.color = 'black';
+cart.style.marginLeft = '12px';
+nav.appendChild(cart);
+
+
+document.body.insertBefore(nav, document.body.firstChild);
+
 imagtextcont.style.display = 'flex';
 imagtextcont.style.flexDirection = 'row';
 imagtextcont.style.gap = '5cm';
@@ -220,3 +285,4 @@ footer.appendChild(copyright);
 
 
 document.body.appendChild(footer);
+
