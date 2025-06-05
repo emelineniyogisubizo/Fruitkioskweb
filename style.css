@@ -1,29 +1,2 @@
-.navcontainer{
-    display: flex;
-    gap: 3cm;
-    background-color: rgb(252, 249, 235);
-    padding-top:0.5cm;
-    padding-bottom: 0.2cm;
 
-}
-.navbar{
-    margin-left: 14cm;
-}
-.navbar a{
-    margin-left: 2cm;
-    text-decoration: none;
-    color: #2E8B57;
-}
-.businessname{
-    margin-left: 2cm;
-    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    font-size: 30px;
-    font-weight: bold;
 
-}
-.businessname a{
-    margin-left: 2cm;
-    text-decoration: none;
-    color: #2E8B57;
-
-}

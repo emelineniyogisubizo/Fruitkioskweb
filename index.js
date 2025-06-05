@@ -12,10 +12,9 @@ const veggieList = document.getElementById('veggieList');
 const veggieDiv = document.getElementById('ourveggies');
 const imageveg = document.getElementById('veggieimg');
 const orderdlist = document.getElementById('veg')
-
-
-
 const nav = document.createElement('div');
+
+
 nav.className = 'navcontainer';
 Object.assign(nav.style, {
   display: 'flex',
@@ -27,6 +26,10 @@ Object.assign(nav.style, {
   margin: '8px',
   borderRadius: '20px',
   boxSizing: 'border-box',
+  position: 'fixed',    
+  top: '0',             
+  left: '0',            
+  width: '99%',        
 });
 
 
@@ -250,7 +253,7 @@ socialPlatforms.forEach(platform => {
 
 
   a.addEventListener('mouseenter', () => {
-    a.style.color = '#a8e6cf'; 
+    a.style.color = 'purple'; 
   });
   a.addEventListener('mouseleave', () => {
     a.style.color = 'white';
@@ -269,7 +272,6 @@ footerTop.appendChild(socialMedia);
 
 
 footer.appendChild(footerTop);
-
 
 const copyright = document.createElement('div');
 const currentYear = new Date().getFullYear();
